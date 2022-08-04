@@ -1,0 +1,1510 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="8/28/2019 11:23:28 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="IDCPC084"
+  DTS:CreatorName="OPTIONS-IT\ayou_idc"
+  DTS:DTSID="{11634D14-DC3B-46D3-BB49-B36DFD029A45}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.521.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="RiskTagging"
+  DTS:PackageType="5"
+  DTS:VersionBuild="122"
+  DTS:VersionGUID="{A83351AF-CCC7-4753-8058-92D1B9B9A22A}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[InFile]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{274FBBFE-236C-4017-94E4-0998BB4C4E43}"
+      DTS:ObjectName="InFile">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::CurrentFile]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Underlying"
+              DTS:DTSID="{512DAD2F-71B7-4424-983A-4F15BE444A2C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Risk Country"
+              DTS:DTSID="{C151B3ED-E466-4781-B58B-B66B708CB41B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Name"
+              DTS:DTSID="{49666CD9-1E3B-44A2-A0D3-4864FFB67985}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="GICS Sector"
+              DTS:DTSID="{36C6490B-0247-43C5-853E-AEBC91C5008F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="GICS Industry Group"
+              DTS:DTSID="{F5A13860-49D3-4F1F-9782-A1B15A0B1ACA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="GICS Industry"
+              DTS:DTSID="{4A3D888D-ECA5-4355-AA63-9F181CAA0375}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="GICS Sub Industry"
+              DTS:DTSID="{9B2342E5-AF91-45B7-B3E5-02CC362CEDB8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Japan Sector"
+              DTS:DTSID="{6DD057D6-7318-46E3-BA02-122CF28BC004}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Japan Style"
+              DTS:DTSID="{30C4303C-A193-4BDF-9D97-FAFC8C195A19}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Endo Exo Score"
+              DTS:DTSID="{E8A7D4F5-7F8D-41DA-802E-70935DC1B815}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="COVID Score"
+              DTS:DTSID="{973E7360-EED2-43F2-8794-216749AEF942}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Trade Type"
+              DTS:DTSID="{C168AE56-1EE0-4B16-851C-A9148AD7E945}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Accounting Flag"
+              DTS:DTSID="{CBBA5891-3CBC-434A-951A-8A112DA20D7E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="HS Buckets"
+              DTS:DTSID="{A39F7A0A-EE0F-4A71-9454-156FC4BBB3C2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ECM"
+              DTS:DTSID="{5842A4C2-53D7-4502-9ED8-1938800EAAD8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="China PSC"
+              DTS:DTSID="{79CF0BAA-D836-4F0B-BCCD-9AC4A22CCA8A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Champions"
+              DTS:DTSID="{6B8128FE-C1ED-47F0-8477-79EE422AE9B9}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{82404D24-A12C-40D5-85F0-CDF32F841ACB}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="CurrentFile">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Foreach File"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach Loop Container"
+      DTS:DTSID="{DD73138C-9CDA-4691-9174-4362703D0008}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Foreach File">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachFileEnumerator"
+        DTS:DTSID="{4DB23626-C8A7-4762-98CC-1B88BC973050}"
+        DTS:ObjectName="{7D01774B-7EE7-4B74-8ADF-93C765D400B2}">
+        <DTS:PropertyExpression
+          DTS:Name="Directory">@[$Project::InboundFolder]</DTS:PropertyExpression>
+        <DTS:ObjectData>
+          <ForEachFileEnumeratorProperties>
+            <FEFEProperty
+              Folder="\\idcgenstorus\ctsan.induscap.com$\IndusCTSAN\technology\DEV\Systems\Risk\Daily" />
+            <FEFEProperty
+              FileSpec="ClassificationMaster_*.csv" />
+            <FEFEProperty
+              FileNameRetrievalType="0" />
+            <FEFEProperty
+              Recurse="0" />
+          </ForEachFileEnumeratorProperties>
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Foreach File\Archive File"
+          DTS:CreationName="Microsoft.FileSystemTask"
+          DTS:DelayValidation="True"
+          DTS:Description="File System Task"
+          DTS:DTSID="{40EA1B3C-A7DB-4B56-B709-1BEF2D286CE8}"
+          DTS:ExecutableType="Microsoft.FileSystemTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Archive File"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <FileSystemData
+              TaskOperationType="MoveFile"
+              TaskOverwriteDestFile="True"
+              TaskSourcePath="{274FBBFE-236C-4017-94E4-0998BB4C4E43}"
+              TaskDestinationPath="$Project::ArchiveFolder"
+              TaskIsDestinationVariable="True" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Foreach File\Clean Src,Dst Table"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{11B327A4-CC02-4205-A2D7-4F1BF1FEC300}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Clean Src,Dst Table"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019 CTP2.3; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{68BA99FC-D1D5-4414-9EE7-44D5959D75C4}"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE ICP_Risk.risk.Classifications_src;&#xA;TRUNCATE TABLE ICP_Risk.risk.Classifications_dst;&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Foreach File\Ingest File"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{5D0B46BA-985F-409A-85A8-D68CE2607F0F}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Ingest File"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Foreach File\Ingest File\Flat File Source"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="1033"
+                  name="Flat File Source"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach File\Ingest File\Flat File Source.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[InFile]"
+                      connectionManagerRefId="Package.ConnectionManagers[InFile]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].Columns[Name]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Name]"
+                          length="100"
+                          lineageId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].Columns[Name]"
+                          name="Name"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].Columns[Underlying]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Underlying]"
+                          length="100"
+                          lineageId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].Columns[Underlying]"
+                          name="Underlying"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].Columns[Risk Country]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Risk Country]"
+                          length="100"
+                          lineageId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].Columns[Risk Country]"
+                          name="Risk Country"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].Columns[GICS Sector]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[GICS Sector]"
+                          length="100"
+                          lineageId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].Columns[GICS Sector]"
+                          name="GICS Sector"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].Columns[GICS Industry Group]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[GICS Industry Group]"
+                          length="100"
+                          lineageId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].Columns[GICS Industry Group]"
+                          name="GICS Industry Group"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].Columns[GICS Industry]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[GICS Industry]"
+                          length="100"
+                          lineageId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].Columns[GICS Industry]"
+                          name="GICS Industry"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].Columns[GICS Sub Industry]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[GICS Sub Industry]"
+                          length="100"
+                          lineageId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].Columns[GICS Sub Industry]"
+                          name="GICS Sub Industry"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].Columns[Japan Sector]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Japan Sector]"
+                          length="100"
+                          lineageId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].Columns[Japan Sector]"
+                          name="Japan Sector"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].Columns[Japan Style]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Japan Style]"
+                          length="100"
+                          lineageId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].Columns[Japan Style]"
+                          name="Japan Style"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].Columns[Endo Exo Score]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Endo Exo Score]"
+                          length="100"
+                          lineageId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].Columns[Endo Exo Score]"
+                          name="Endo Exo Score"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].Columns[COVID Score]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[COVID Score]"
+                          length="100"
+                          lineageId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].Columns[COVID Score]"
+                          name="COVID Score"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].Columns[Trade Type]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Trade Type]"
+                          length="100"
+                          lineageId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].Columns[Trade Type]"
+                          name="Trade Type"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].Columns[Accounting Flag]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Accounting Flag]"
+                          length="100"
+                          lineageId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].Columns[Accounting Flag]"
+                          name="Accounting Flag"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].Columns[HS Buckets]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[HS Buckets]"
+                          length="100"
+                          lineageId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].Columns[HS Buckets]"
+                          name="HS Buckets"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].Columns[ECM]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ECM]"
+                          length="100"
+                          lineageId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].Columns[ECM]"
+                          name="ECM"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].Columns[China PSC]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[China PSC]"
+                          length="100"
+                          lineageId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].Columns[China PSC]"
+                          name="China PSC"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].Columns[Champions]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Champions]"
+                          length="100"
+                          lineageId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].Columns[Champions]"
+                          name="Champions"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="Name" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Underlying]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="Underlying" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Risk Country]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="Risk Country" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[GICS Sector]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="GICS Sector" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[GICS Industry Group]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="GICS Industry Group" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[GICS Industry]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="GICS Industry" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[GICS Sub Industry]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="GICS Sub Industry" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Japan Sector]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="Japan Sector" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Japan Style]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="Japan Style" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Endo Exo Score]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="Endo Exo Score" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[COVID Score]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="COVID Score" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Trade Type]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="Trade Type" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Accounting Flag]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="Accounting Flag" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[HS Buckets]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="HS Buckets" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ECM]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="ECM" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[China PSC]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="China PSC" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Champions]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="Champions" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach File\Ingest File\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[risk].[Classifications_src]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS,ROWS_PER_BATCH = 10000</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach File\Ingest File\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="{68BA99FC-D1D5-4414-9EE7-44D5959D75C4}:invalid"
+                      connectionManagerRefId="{68BA99FC-D1D5-4414-9EE7-44D5959D75C4}:invalid"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Foreach File\Ingest File\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Foreach File\Ingest File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Name]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="Name"
+                          externalMetadataColumnId="Package\Foreach File\Ingest File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
+                          lineageId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].Columns[Name]" />
+                        <inputColumn
+                          refId="Package\Foreach File\Ingest File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Underlying]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="Underlying"
+                          externalMetadataColumnId="Package\Foreach File\Ingest File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Underlying]"
+                          lineageId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].Columns[Underlying]" />
+                        <inputColumn
+                          refId="Package\Foreach File\Ingest File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Risk Country]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="Risk Country"
+                          externalMetadataColumnId="Package\Foreach File\Ingest File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Risk Country]"
+                          lineageId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].Columns[Risk Country]" />
+                        <inputColumn
+                          refId="Package\Foreach File\Ingest File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[GICS Sector]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="GICS Sector"
+                          externalMetadataColumnId="Package\Foreach File\Ingest File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[GICS Sector]"
+                          lineageId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].Columns[GICS Sector]" />
+                        <inputColumn
+                          refId="Package\Foreach File\Ingest File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[GICS Industry Group]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="GICS Industry Group"
+                          externalMetadataColumnId="Package\Foreach File\Ingest File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[GICS Industry Group]"
+                          lineageId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].Columns[GICS Industry Group]" />
+                        <inputColumn
+                          refId="Package\Foreach File\Ingest File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[GICS Industry]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="GICS Industry"
+                          externalMetadataColumnId="Package\Foreach File\Ingest File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[GICS Industry]"
+                          lineageId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].Columns[GICS Industry]" />
+                        <inputColumn
+                          refId="Package\Foreach File\Ingest File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[GICS Sub Industry]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="GICS Sub Industry"
+                          externalMetadataColumnId="Package\Foreach File\Ingest File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[GICS Sub Industry]"
+                          lineageId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].Columns[GICS Sub Industry]" />
+                        <inputColumn
+                          refId="Package\Foreach File\Ingest File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Japan Sector]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="Japan Sector"
+                          externalMetadataColumnId="Package\Foreach File\Ingest File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Japan Sector]"
+                          lineageId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].Columns[Japan Sector]" />
+                        <inputColumn
+                          refId="Package\Foreach File\Ingest File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Japan Style]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="Japan Style"
+                          externalMetadataColumnId="Package\Foreach File\Ingest File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Japan Style]"
+                          lineageId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].Columns[Japan Style]" />
+                        <inputColumn
+                          refId="Package\Foreach File\Ingest File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Endo Exo Score]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="Endo Exo Score"
+                          externalMetadataColumnId="Package\Foreach File\Ingest File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Endo/Exo Score]"
+                          lineageId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].Columns[Endo Exo Score]" />
+                        <inputColumn
+                          refId="Package\Foreach File\Ingest File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[COVID Score]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="COVID Score"
+                          externalMetadataColumnId="Package\Foreach File\Ingest File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[COVID Score]"
+                          lineageId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].Columns[COVID Score]" />
+                        <inputColumn
+                          refId="Package\Foreach File\Ingest File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Trade Type]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="Trade Type"
+                          externalMetadataColumnId="Package\Foreach File\Ingest File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Trade Type]"
+                          lineageId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].Columns[Trade Type]" />
+                        <inputColumn
+                          refId="Package\Foreach File\Ingest File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Accounting Flag]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="Accounting Flag"
+                          externalMetadataColumnId="Package\Foreach File\Ingest File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Accounting Flag]"
+                          lineageId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].Columns[Accounting Flag]" />
+                        <inputColumn
+                          refId="Package\Foreach File\Ingest File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[HS Buckets]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="HS Buckets"
+                          externalMetadataColumnId="Package\Foreach File\Ingest File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HS Buckets]"
+                          lineageId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].Columns[HS Buckets]" />
+                        <inputColumn
+                          refId="Package\Foreach File\Ingest File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ECM]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="ECM"
+                          externalMetadataColumnId="Package\Foreach File\Ingest File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ECM]"
+                          lineageId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].Columns[ECM]" />
+                        <inputColumn
+                          refId="Package\Foreach File\Ingest File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[China PSC]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="China PSC"
+                          externalMetadataColumnId="Package\Foreach File\Ingest File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[China PSC]"
+                          lineageId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].Columns[China PSC]" />
+                        <inputColumn
+                          refId="Package\Foreach File\Ingest File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Champions]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="Champions"
+                          externalMetadataColumnId="Package\Foreach File\Ingest File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Champions]"
+                          lineageId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output].Columns[Champions]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach File\Ingest File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
+                          dataType="i4"
+                          name="Id" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach File\Ingest File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="Name" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach File\Ingest File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Underlying]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="Underlying" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach File\Ingest File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Risk Country]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="Risk Country" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach File\Ingest File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[GICS Sector]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="GICS Sector" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach File\Ingest File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[GICS Industry Group]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="GICS Industry Group" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach File\Ingest File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[GICS Industry]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="GICS Industry" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach File\Ingest File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[GICS Sub Industry]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="GICS Sub Industry" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach File\Ingest File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Japan Sector]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="Japan Sector" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach File\Ingest File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Japan Style]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="Japan Style" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach File\Ingest File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Endo/Exo Score]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="Endo/Exo Score" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach File\Ingest File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[COVID Score]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="COVID Score" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach File\Ingest File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Trade Type]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="Trade Type" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach File\Ingest File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Accounting Flag]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="Accounting Flag" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach File\Ingest File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HS Buckets]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="HS Buckets" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach File\Ingest File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ECM]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="ECM" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach File\Ingest File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[China PSC]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="China PSC" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach File\Ingest File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Champions]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="Champions" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach File\Ingest File\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Foreach File\Ingest File\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach File\Ingest File\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach File\Ingest File\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach File\Ingest File\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach File\Ingest File\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Foreach File\Ingest File.Paths[Flat File Source Output]"
+                  endId="Package\Foreach File\Ingest File\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Foreach File\Ingest File\Flat File Source.Outputs[Flat File Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Foreach File\Load Data"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{2EF7E116-BC87-440D-859E-61D15D0B586B}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Load Data"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{68BA99FC-D1D5-4414-9EE7-44D5959D75C4}"
+              SQLTask:SqlStatementSource="exec risk.processNewTxn_Classifications" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Foreach File\Scrub Data"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{FB7EE176-ECA8-40A9-A566-0912EE6710EC}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Scrub Data"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{68BA99FC-D1D5-4414-9EE7-44D5959D75C4}"
+              SQLTask:SqlStatementSource="exec risk.src2dst_Classifications" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Foreach File.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{85C5534F-BB2F-41E1-A81A-41855D138386}"
+          DTS:From="Package\Foreach File\Ingest File"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Foreach File\Scrub Data" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Foreach File.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{81D27CCF-9900-4FEF-9D15-196AAE3EE63D}"
+          DTS:From="Package\Foreach File\Scrub Data"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Foreach File\Load Data" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Foreach File.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{71E03F7D-0ED6-4F2E-AD02-27C56095013D}"
+          DTS:From="Package\Foreach File\Clean Src,Dst Table"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\Foreach File\Ingest File" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Foreach File.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{2D670C8E-47AA-4E7B-8E0E-3E34848622E8}"
+          DTS:From="Package\Foreach File\Load Data"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\Foreach File\Archive File" />
+      </DTS:PrecedenceConstraints>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{9318233F-5C16-40E8-9B46-A679B694C502}"
+          DTS:ObjectName="{9318233F-5C16-40E8-9B46-A679B694C502}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::CurrentFile" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:EventHandlers>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnError]"
+      DTS:CreationName="OnError"
+      DTS:DTSID="{8E14A45C-AE32-4C54-8711-C4F5AC740C0E}"
+      DTS:EventID="3014725"
+      DTS:EventName="OnError"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{D4E46F96-91C6-4478-A561-1F0CFAE1630C}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Send Mail Task"
+          DTS:CreationName="Microsoft.SendMailTask"
+          DTS:Description="Send Mail Task"
+          DTS:DTSID="{79F930CE-C38E-47C9-93DA-F6425E61416E}"
+          DTS:ExecutableType="Microsoft.SendMailTask"
+          DTS:FailPackageOnFailure="True"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Send Mail Task">
+          <DTS:Variables />
+          <DTS:PropertyExpression
+            DTS:Name="FromLine">@[$Project::EmailFrom]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="MessageSource">"Package:                              "+ (DT_WSTR, 50)  @[System::PackageName] +".
+Environment:                      "+ (DT_WSTR, 50)  @[$Project::Environment] +"
+Time:                                    " + (DT_WSTR, 50) @[System::StartTime]  +".
+Task:                                     "+  (DT_WSTR, 50) @[System::SourceName]  +".
+Error Description:               " + (DT_STR, 2000,1252)  @[System::ErrorDescription]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="Subject">"*FAILED* DTSX Package: " + @[System::PackageName]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="ToLine">@[$Project::EmailTo]</DTS:PropertyExpression>
+          <DTS:ObjectData>
+            <SendMailTask:SendMailTaskData
+              SendMailTask:SMTPServer="{E7B53D46-5E6D-4E3F-A70A-06FFBF96A8AC}"
+              SendMailTask:From="support@induscap.com"
+              SendMailTask:To="indusit@induscap.com"
+              SendMailTask:Subject="*FAILED* DTSX Package: RiskTagging"
+              SendMailTask:MessageSource="Package:                              RiskTagging.&#xA;Environment:                      DEV&#xA;Time:                                    1/22/2021 9:56:08 AM.&#xA;Task:                                     .&#xA;Error Description:               " xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:EventHandler>
+  </DTS:EventHandlers>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Foreach File\Archive File"
+          TopLeft="58,303" />
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Foreach File\Clean Src,Dst Table"
+          TopLeft="57,3" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Foreach File\Ingest File"
+          TopLeft="72,80" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Foreach File\Load Data"
+          TopLeft="68,228" />
+        <NodeLayout
+          Size="146,42"
+          Id="Package\Foreach File\Scrub Data"
+          TopLeft="65,158" />
+        <EdgeLayout
+          Id="Package\Foreach File.PrecedenceConstraints[Constraint]"
+          TopLeft="137.5,122">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36"
+              Start="0,0"
+              End="0,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach File.PrecedenceConstraints[Constraint 1]"
+          TopLeft="135.5,200">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28"
+              Start="0,0"
+              End="0,20.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach File.PrecedenceConstraints[Constraint 2]"
+          TopLeft="139.5,45">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35"
+              Start="0,0"
+              End="0,27.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach File.PrecedenceConstraints[Constraint 3]"
+          TopLeft="136.25,270">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33"
+              Start="0,0"
+              End="0,25.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="296,414"
+          Size="296,457"
+          Id="Package\Foreach File"
+          TopLeft="184,52" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="150,42"
+          Id="Package.EventHandlers[OnError]\Send Mail Task"
+          TopLeft="60,60" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <TaskHost
+    design-time-name="Package\Foreach File\Ingest File">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="177,42"
+          Id="Package\Foreach File\Ingest File\OLE DB Destination"
+          TopLeft="341,248" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Foreach File\Ingest File\Flat File Source"
+          TopLeft="355,78" />
+        <EdgeLayout
+          Id="Package\Foreach File\Ingest File.Paths[Flat File Source Output]"
+          TopLeft="431.25,120">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,128"
+              Start="0,0"
+              End="0,120.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,120.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach File\Ingest File\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
